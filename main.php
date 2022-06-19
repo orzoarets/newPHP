@@ -32,9 +32,25 @@ if (isset($item_name))
 }
 }
 
-else {
-    echo "no data provided";
+
+$itemList = get_items();
+if ($itemList)
+{
+    foreach ($itemList as $Item) :
+    {
+        ?>  <pre>
+            <?php echo $Item['ItemName'] ?> </pre>
+            <?php 
+
+    }  
+    endforeach;
 }
+else
+    {
+        echo "No Items available";
+    }
+
+    
 
 ?>
     
